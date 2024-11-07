@@ -6,7 +6,7 @@ entity doblar is
 	port(
 		clk,df,reset	: in	std_logic;
 	   di,dd	 : in	std_logic_vector(11 downto 0);
-		M1I,M0I,M1D,M0D	 : out	std_logic
+		M1I,M0I,M1D,M0D,Envio1,Envio0	 : out	std_logic
 	);
 
 end entity;
@@ -14,18 +14,20 @@ end entity;
 architecture rtl of doblar is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (parado,der,izq);
+	type state_type is (parado,der,izq,reversa);
 
 	-- Register to hold the current state
 	signal state   : state_type;
 	signal dd: std_logic;
 	signal di:std_logic;
 	signal ic:std_logic;----iniciar contador doblar
-	signal tc:std_logic;----termina contador doblar
-	signal clear:std_logic;-------clear contador doblar
+	signal tc1:std_logic;----termina contador doblar 90
+	signal tc2:std_logic;----termina contador doblar 180
+	signal clc:std_logic;-------clear contador doblar
+	signal cclk:std_logic;-------clock contador reducido a 50khz
 	
 	begin
-
+tc1<= s0;----------------------------------------------------------------------
 	-- Logic to advance to the next state
 	process (clk, reset)
 	begin
@@ -33,29 +35,33 @@ architecture rtl of doblar is
 			state <= s0;
 		elsif (rising_edge(clk)) then
 			case state is
-				when s0=>
-					if input = '1' then
-						state <= s1;
+				when parado=>
+					if (df='1' and di='1') then
+						if (dd='1') then
+							state<= reversa;
+						else
+							state<= der;
+						end if;
 					else
-						state <= s0;
+						state <= izq;
 					end if;
-				when s1=>
-					if input = '1' then
-						state <= s2;
+				when der=>
+					if tc1='0' then
+						state <= der;
 					else
-						state <= s1;
+						state <= ;---------------------------------------agregar adelante
 					end if;
-				when s2=>
-					if input = '1' then
-						state <= s3;
+				when izq=>
+					if tc1='0' then
+						state <= izq;
 					else
-						state <= s2;
+						state <= ;-------------------------------------agregar adelante
 					end if;
-				when s3 =>
-					if input = '1' then
-						state <= s0;
+				when reversa =>
+					if tc2='0' then
+						state <= reversa;
 					else
-						state <= s3;
+						state <= ;---------agregar adelante
 					end if;
 			end case;
 		end if;
@@ -65,15 +71,24 @@ architecture rtl of doblar is
 	process (state)
 	begin
 		case state is
-			when s0 =>
-				output <= "00";
-			when s1 =>
-				output <= "01";
-			when s2 =>
-				output <= "10";
-			when s3 =>
-				output <= "11";
-		end case;
+			when parado =>
+				M1I<= '0';M0I<= '0';M1D<= '0';M0D<= '0';
+				ic<= '0';clc<= '1';
+				envio0<= '0';envio1<= '0';
+			when izq =>
+				M1I<= '0';M0I<= '1';M1D<= '1';M0D<= '0';
+				ic<= '1';clc<= '0';
+				envio0<= '1';envio1<= '0';
+			when der =>
+				M1I<= '1';M0I<= '0';M1D<= '0';M0D<= '1';
+				ic<= '1';clc<= '0';
+				envio0<= '0';envio1<= '1';
+			when reversa =>
+				M1I<= '1';M0I<= '0';M1D<= '0';M0D<= '1';
+				ic<= '1';clc<= '0';
+				envio0<= '1';envio1<= '1';
+
+			end case;
 	end process;
 
 end rtl;
