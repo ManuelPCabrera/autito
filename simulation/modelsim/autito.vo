@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "11/09/2024 23:58:30"
+// DATE "11/10/2024 16:33:33"
 
 // 
 // Device: Altera EP4CE22F17C6 Package FBGA256
@@ -96,8 +96,8 @@ wire \p[2]~10_combout ;
 wire \a[3]~feeder_combout ;
 wire \p[2]~11 ;
 wire \p[3]~12_combout ;
-wire [3:0] a;
 wire [3:0] p;
+wire [3:0] a;
 
 
 // Location: FF_X1_Y4_N13

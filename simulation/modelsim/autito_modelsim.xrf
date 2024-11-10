@@ -1,6 +1,8 @@
 vendor_name = ModelSim
+source_file = 1, C:/Users/sebas/Desktop/faculteishon/2024 seg cuatri/Técnicas y Dispositivos Digitales II/LABORATORIO FINAL/autito/autito/ubicacionparte2v2.vhd
 source_file = 1, C:/Users/sebas/Desktop/faculteishon/2024 seg cuatri/Técnicas y Dispositivos Digitales II/LABORATORIO FINAL/autito/autito/SumaoResta.vhd
-source_file = 1, C:/Users/sebas/Desktop/faculteishon/2024 seg cuatri/Técnicas y Dispositivos Digitales II/LABORATORIO FINAL/autito/autito/sumaoResta.vwf
+source_file = 1, C:/Users/sebas/Desktop/faculteishon/2024 seg cuatri/Técnicas y Dispositivos Digitales II/LABORATORIO FINAL/autito/autito/ESQUEMATICO_DE_UBICACION.bdf
+source_file = 1, C:/Users/sebas/Desktop/faculteishon/2024 seg cuatri/Técnicas y Dispositivos Digitales II/LABORATORIO FINAL/autito/autito/contador_de_cuadriculas.vhd
 source_file = 1, C:/Users/sebas/Desktop/faculteishon/2024 seg cuatri/Técnicas y Dispositivos Digitales II/LABORATORIO FINAL/autito/autito/db/autito.cbx.xml
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
