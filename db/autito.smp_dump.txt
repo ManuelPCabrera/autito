@@ -1,0 +1,15 @@
+
+State Machine - |ubicacionparte2v2|fstate
+Name fstate.RESTAR4b fstate.SUMAR1b fstate.SUMAR4b fstate.RESTAR1b fstate.RESTAR4 fstate.SUMAR1 fstate.SUMAR4 fstate.RESTAR1 fstate.O4 fstate.O3 fstate.O2 fstate.O1 
+fstate.O1 0 0 0 0 0 0 0 0 0 0 0 0 
+fstate.O2 0 0 0 0 0 0 0 0 0 0 1 1 
+fstate.O3 0 0 0 0 0 0 0 0 0 1 0 1 
+fstate.O4 0 0 0 0 0 0 0 0 1 0 0 1 
+fstate.RESTAR1 0 0 0 0 0 0 0 1 0 0 0 1 
+fstate.SUMAR4 0 0 0 0 0 0 1 0 0 0 0 1 
+fstate.SUMAR1 0 0 0 0 0 1 0 0 0 0 0 1 
+fstate.RESTAR4 0 0 0 0 1 0 0 0 0 0 0 1 
+fstate.RESTAR1b 0 0 0 1 0 0 0 0 0 0 0 1 
+fstate.SUMAR4b 0 0 1 0 0 0 0 0 0 0 0 1 
+fstate.SUMAR1b 0 1 0 0 0 0 0 0 0 0 0 1 
+fstate.RESTAR4b 1 0 0 0 0 0 0 0 0 0 0 1 

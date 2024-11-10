@@ -1,0 +1,25 @@
+|SumaoResta
+Z0 => Add0.IN4
+Z0 => Add1.IN4
+Z1 => Add0.IN3
+Z1 => Add1.IN3
+Z2 => Add0.IN2
+Z2 => Add1.IN2
+SorR => p.OUTPUTSELECT
+SorR => p.OUTPUTSELECT
+SorR => p.OUTPUTSELECT
+SorR => p.OUTPUTSELECT
+clock => a[0].CLK
+clock => a[1].CLK
+clock => a[2].CLK
+clock => a[3].CLK
+clock => p[0].CLK
+clock => p[1].CLK
+clock => p[2].CLK
+clock => p[3].CLK
+p0 <= p[0].DB_MAX_OUTPUT_PORT_TYPE
+p1 <= p[1].DB_MAX_OUTPUT_PORT_TYPE
+p2 <= p[2].DB_MAX_OUTPUT_PORT_TYPE
+p3 <= p[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
